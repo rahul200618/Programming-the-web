@@ -94,3 +94,9 @@ body {
     margin-top: 40px;
   }
 }
+@media (max-width: 480px) {
+  .card {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}
