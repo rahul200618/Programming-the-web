@@ -1,12 +1,22 @@
+# Simple Weather App
 
+A clean and simple weather application built with HTML, CSS, and vanilla JavaScript.
 
-- Search for weather information by entering a location in the search bar
-- View current weather conditions including temperature, weather icon, and location details
-- See additional weather metrics like "feels like" temperature, humidity percentage, wind speed, and precipitation amounts
-- Browse a 7-day weather forecast with daily high/low temperatures and weather icons
-- View an hourly forecast showing temperature changes throughout the day
-- Switch between different days of the week using the day selector in the hourly forecast section
-- Toggle between Imperial and Metric measurement units via the units dropdown
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+## Features
 
+- **Search**: Find weather information for any city.
+- **Current Weather**: View current temperature, humidity, wind speed, and more.
+- **7-Day Forecast**: See the weather forecast for the upcoming week.
+- **Hourly Forecast**: Browse a detailed hourly forecast for a selected day.
+- **Unit Toggle**: Switch between Metric (°C) and Imperial (°F) units.
+
+## How to Run
+
+1.  Make sure `index.html`, `style.css`, `script.js`, and the `assets` folder are all in the same directory.
+2.  Open the `index.html` file in your web browser.
+
+## API Used
+
+This project uses the free and open-source Open-Meteo API for all weather data.
+
+---

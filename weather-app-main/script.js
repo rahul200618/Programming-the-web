@@ -187,11 +187,15 @@ document.addEventListener('DOMContentLoaded', () => {
     unitToggleButtons.forEach(button => {
         button.addEventListener('click', () => {
             if (button.classList.contains('active')) return;
-
-            document.querySelector('.unit-toggle .active').classList.remove('active');
-            button.classList.add('active');
             
-            currentUnits = button.dataset.unit;
+            const newUnit = button.dataset.unit;
+            currentUnits = newUnit;
+
+            // Update both mobile and desktop toggles to stay in sync
+            unitToggleButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.unit === newUnit);
+            });
+            
             updateUI();
         });
     });
