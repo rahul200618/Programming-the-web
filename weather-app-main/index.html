@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Now</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="page-wrapper"> <header class="app-header">
+      <div class="logo-container">
+        <img src="./assets/images/logo.svg" alt="Weather Now Logo" class="logo">
+        <span class="logo-text">Weather Now</span>
+      </div>
+      <div class="settings-container">
+        <img src="./assets/images/icon-units.svg" alt="Meter Units Logo" class="meter-logo">
+        <div class="unit-toggle" id="units-desktop-toggle">
+          <button class="active" data-unit="metric">Units</button>
+          <button data-unit="imperial">Units</button> </div>
+        <div class="unit-toggle mobile-toggle">
+            <button class="active" data-unit="metric">&deg;C</button>
+            <button data-unit="imperial">&deg;F</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="weather-app-template">
+      <h1 class="main-title">How's the sky looking today?</h1>
+
+      <div class="search-bar-container">
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Search for a place...">
+          <button id="search-btn">Search</button>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <section class="left-content">
+          <div class="current-weather-card">
+            <div class="location-date">
+              <div class="location" id="current-location">Loading...</div>
+              <div class="date" id="current-date"></div>
+            </div>
+            <div class="temp-icon">
+              <img src="./assets/images/icon-partly-cloudy.webp" alt="clear sky" class="current-card-icon" id="current-icon">
+              <div class="temperature" id="current-temp">--&deg;</div>
+            </div>
+          </div>
+
+          <div class="weather-metrics">
+            <div class="metric">
+              <div class="label">Feels Like</div>
+              <div class="value" id="feels-like">--&deg;</div>
+            </div>
+            <div class="metric">
+              <div class="label">Humidity</div>
+              <div class="value" id="humidity">--%</div>
+            </div>
+            <div class="metric">
+              <div class="label">Wind</div>
+              <div class="value" id="wind">-- km/h</div>
+            </div>
+            <div class="metric">
+              <div class="label">Precipitation</div>
+              <div class="value" id="precipitation">-- mm</div>
+            </div>
+          </div>
+
+          <div class="daily-forecast">
+            <h2>Daily forecast</h2>
+            <div class="daily-cards" id="daily-cards">
+              </div>
+          </div>
+        </section>
+
+        <aside class="right-sidebar">
+          <div class="hourly-forecast">
+            <div class="hourly-header">
+              <h2>Hourly forecast</h2>
+              <div class="hourly-day-selector" id="hourly-day-selector">
+                </div>
+            </div>
+            <div class="hourly-cards-scroll"> <div class="hourly-cards-list" id="hourly-cards">
+                </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+<script src="./script.js"></script>
+</body>
+</html>
