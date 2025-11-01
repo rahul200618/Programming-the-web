@@ -8,7 +8,6 @@ Below is a quick gallery of the projects in this repository. Click a card to ope
 
 | Project | Description |
 |---|---|
-| [Final project](./Final project/) | Quiz & Ladder — Snakes & Ladders variant with quiz questions. Live demo: https://rahul200618.github.io/Quiz-and-Ladder-A-Web-game/ |
 | [CSS BATTLE1](./CSS%20BATTLE1/) | Perfume UI CSS challenge. |
 | [CSS BATTLE2](./CSS%20BATTLE2/) | User Reviews CSS challenge. |
 | [CSS Mini Challenge](./CSS%20Mini%20Challenge/) | Coffee card mini challenge. |
