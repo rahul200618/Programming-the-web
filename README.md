@@ -4,13 +4,17 @@ A collection of small front-end exercises and mini-projects created while learni
 
 ## Projects in this repository
 
-- `Final project/` — Quiz & Ladder (Snakes & Ladders variant with quiz questions). Live demo: https://rahul200618.github.io/Quiz-and-Ladder-A-Web-game/ (if published via GitHub Pages). See `Final project/Readme.md` for details.
-- `CSS BATTLE1/` — CSS challenge project(s).
-- `CSS BATTLE2/` — Additional CSS challenge(s).
-- `CSS Mini Challenge/` — Small CSS exercise(s).
-- `JS Practice/` — Collection of small JavaScript practice projects (e.g., live character counter, todo list, lightbulb demo, quote generator).
-- `day1/` — Day 1 exercises and small examples.
-- `weather-app-main/` — Weather app demo (includes assets and a functioning UI). Open `weather-app-main/index.html` to try.
+Below is a quick gallery of the projects in this repository. Click a card to open that project's folder in your browser.
+
+| Project | Description |
+|---|---|
+| [Final project](./Final project/) | Quiz & Ladder — Snakes & Ladders variant with quiz questions. Live demo: https://rahul200618.github.io/Quiz-and-Ladder-A-Web-game/ |
+| [CSS BATTLE1](./CSS%20BATTLE1/) | Perfume UI CSS challenge. |
+| [CSS BATTLE2](./CSS%20BATTLE2/) | User Reviews CSS challenge. |
+| [CSS Mini Challenge](./CSS%20Mini%20Challenge/) | Coffee card mini challenge. |
+| [JS Practice](./JS%20Practice/) | Small JS demos (lightbulb, todo, quote generator, etc.). |
+| [day1](./day1/) | Day 1 exercises and examples. |
+| [weather-app-main](./weather-app-main/) | Weather app demo (includes assets and UI). |
 
 If any folder is missing an `index.html`, open the listed files inside that folder to run the demo.
 
