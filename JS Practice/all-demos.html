@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JS Practice — All Demos</title>
+  <style>
+    :root{--bg:#f4f7f6;--card:#fff;--accent:#27ae60;--muted:#666}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);margin:0;padding:24px}
+    .container{max-width:1000px;margin:0 auto}
+    h1{margin:0 0 18px}
+    .demos{display:grid;grid-template-columns:1fr;gap:20px}
+    .demo{background:var(--card);padding:18px;border-radius:8px;border:1px solid #e6e6e6}
+
+    /* Lightbulb demo styles */
+    #lightbulb-demo .light-container{max-width:520px;margin:0 auto;text-align:center;padding:24px;border-radius:6px;background:linear-gradient(180deg,#fff,#f7f7f7)}
+    #lightbulb-demo .light-container.dark{background:#061524;color:#ecf0f1}
+    #lightbulb-demo img{height:220px;display:block;margin:12px auto}
+    #lightbulb-demo button{padding:12px 22px;font-size:1rem;color:#fff;background:var(--accent);border:none;border-radius:6px;cursor:pointer}
+    #lightbulb-demo button:hover{background:#1f8c4a}
+
+    /* Todo demo styles */
+    #todo-demo{display:flex;justify-content:center}
+    #todo-demo .todo-container{background:#fff;padding:20px;border-radius:8px;width:100%;max-width:520px}
+    #todo-demo .input-section{display:flex;margin-bottom:12px}
+    #todo-demo #task-input{flex:1;padding:10px;border:1px solid #ddd;border-radius:6px;margin-right:8px}
+    #todo-demo #add-task-btn{padding:10px 14px;background:var(--accent);color:#fff;border:none;border-radius:6px;cursor:pointer}
+    #todo-demo ul{list-style:none;padding:0;margin:0}
+    #todo-demo li{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:6px;border:1px solid #eee;margin-bottom:8px}
+    #todo-demo li.done{text-decoration:line-through;color:#888;background:#f0fff0}
+    #todo-demo .remove-btn{background:#dc3545;color:#fff;border:none;padding:6px 8px;border-radius:4px;cursor:pointer}
+
+    /* Quote demo styles */
+    #quote-demo{display:flex;justify-content:center}
+    #quote-demo .quote-container{max-width:520px;padding:20px;background:#fff;border-radius:8px;text-align:center}
+    #quote-display{min-height:80px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:12px}
+    #quote-demo button{padding:10px 16px;background:#25b12c;color:#fff;border:none;border-radius:6px;cursor:pointer}
+
+    footer{margin-top:18px;color:var(--muted);text-align:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JS Practice — All Demos (Lightbulb, To-Do, Quote)</h1>
+    <p>These demos are bundled on a single page. Images are loaded from the project's subfolders.
+       If you want everything inlined (images as data URIs), tell me and I will embed them.</p>
+
+    <div class="demos">
+      <!-- Lightbulb demo -->
+      <section class="demo" id="lightbulb-demo">
+        <h2>Light Bulb Toggle</h2>
+        <div class="light-container" id="light-container">
+          <h3>Light Bulb Switch</h3>
+          <img id="demo-light-bulb" src="./Lightbulb/bulb.png" alt="A light bulb that is turned off">
+          <button id="demo-toggle-btn">Turn On</button>
+        </div>
+      </section>
+
+      <!-- Todo demo -->
+      <section class="demo" id="todo-demo">
+        <div class="todo-container">
+          <h2>Dynamic To-Do List</h2>
+          <div class="input-section">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button id="add-task-btn">Add Task</button>
+          </div>
+          <ul id="task-list"></ul>
+        </div>
+      </section>
+
+      <!-- Quote demo -->
+      <section class="demo" id="quote-demo">
+        <div class="quote-container">
+          <h2>Daily Quote</h2>
+          <div id="quote-display"></div>
+          <button id="new-quote-btn">Show New Quote</button>
+        </div>
+      </section>
+    </div>
+
+    <footer>Back to <a href="../index.html">Projects Gallery</a></footer>
+  </div>
+
+  <script>
+    // --- Lightbulb demo JS ---
+    (function(){
+      const bulbImg = document.getElementById('demo-light-bulb');
+      const toggleBtn = document.getElementById('demo-toggle-btn');
+      const container = document.getElementById('light-container');
+      const lightOnSrc = './Lightbulb/light-bulb.png';
+      const lightOffSrc = './Lightbulb/bulb.png';
+      let isLightOn = false;
+      function updateLightUI(){
+        if(isLightOn){
+          container.classList.add('dark');
+          bulbImg.src = lightOnSrc;
+          bulbImg.alt = 'A light bulb that is turned on';
+          toggleBtn.textContent = 'Turn Off';
+        } else {
+          container.classList.remove('dark');
+          bulbImg.src = lightOffSrc;
+          bulbImg.alt = 'A light bulb that is turned off';
+          toggleBtn.textContent = 'Turn On';
+        }
+      }
+      updateLightUI();
+      toggleBtn.addEventListener('click',function(){ isLightOn = !isLightOn; updateLightUI(); });
+    })();
+
+    // --- To-Do demo (scoped) ---
+    (function(){
+      const root = document.getElementById('todo-demo');
+      const taskInput = root.querySelector('#task-input');
+      const addTaskBtn = root.querySelector('#add-task-btn');
+      const taskList = root.querySelector('#task-list');
+
+      function addTask(){
+        const taskText = taskInput.value.trim();
+        if(taskText === ''){ alert('Please enter a task!'); return; }
+        const listItem = document.createElement('li');
+        const taskSpan = document.createElement('span');
+        taskSpan.textContent = taskText;
+        listItem.appendChild(taskSpan);
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '❌';
+        removeBtn.classList.add('remove-btn');
+        removeBtn.addEventListener('click', function(e){ e.stopPropagation(); taskList.removeChild(listItem); });
+
+        listItem.addEventListener('click', function(){ listItem.classList.toggle('done'); });
+
+        listItem.append(removeBtn);
+        taskList.append(listItem);
+        taskInput.value = '';
+      }
+
+      addTaskBtn.addEventListener('click', addTask);
+      taskInput.addEventListener('keypress', function(e){ if(e.key === 'Enter') addTask(); });
+    })();
+
+    // --- Quote generator demo (scoped) ---
+    (function(){
+      const root = document.getElementById('quote-demo');
+      const quoteDisplay = root.querySelector('#quote-display');
+      const newQuoteBtn = root.querySelector('#new-quote-btn');
+
+      const quotes = [
+        "The only way to do great work is to love what you do. - Steve Jobs",
+        "Believe you can and you're halfway there. - Theodore Roosevelt",
+        "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+        "It is during our darkest moments that we must focus to see the light. - Aristotle Onassis",
+        "Strive not to be a success, but rather to be of value. - Albert Einstein",
+        "The mind is everything. What you think you become. - Buddha",
+        "The best way to predict the future is to create it. - Peter Drucker",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+        "The only limit to our realization of tomorrow will be our doubts of today. – Franklin D. Roosevelt"
+      ];
+
+      function getRandomColor(){
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for(let i=0;i<6;i++) color += letters[Math.floor(Math.random()*16)];
+        return color;
+      }
+
+      function displayNewQuote(){
+        quoteDisplay.innerHTML = '';
+        const randomIndex = Math.floor(Math.random()*quotes.length);
+        const randomQuote = quotes[randomIndex];
+        const p = document.createElement('p');
+        p.textContent = randomQuote;
+        p.style.color = getRandomColor();
+        p.style.margin = '0';
+        quoteDisplay.appendChild(p);
+      }
+
+      newQuoteBtn.addEventListener('click', displayNewQuote);
+      displayNewQuote();
+    })();
+  </script>
+</body>
+</html>

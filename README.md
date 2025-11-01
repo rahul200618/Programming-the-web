@@ -1,6 +1,12 @@
 # Programming-the-web
 
 A collection of small front-end exercises and mini-projects created while learning web development. Each folder contains a standalone static project (HTML, CSS, JS and assets). Open a project's folder and open its `index.html` in a browser, or serve the folder with a simple HTTP server during development.
+## Final Project: Quiz & Ladder Game
+
+This repository also links to my final project, **Quiz & Ladder**, a web-based game hosted in its own repository.
+
+-   **Play the Game (Live Demo)**---https://rahul200618.github.io/Quiz-and-Ladder-A-Web-game/
+-   **View on GitHub**---https://github.com/rahul200618/Quiz-and-Ladder-A-Web-game
 
 ## Projects in this repository
 
@@ -8,6 +14,7 @@ Below is a quick gallery of the projects in this repository. Click a card to ope
 
 | Project | Description |
 |---|---|
+| Quiz & Ladder (GitHub) | Final project (game). Hosted in a separate repository. |
 | [CSS BATTLE1](./CSS%20BATTLE1/) | Perfume UI CSS challenge. |
 | [CSS BATTLE2](./CSS%20BATTLE2/) | User Reviews CSS challenge. |
 | [CSS Mini Challenge](./CSS%20Mini%20Challenge/) | Coffee card mini challenge. |
