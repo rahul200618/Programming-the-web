@@ -1,6 +1,6 @@
 # Programming-the-web
 
-A collection of small front-end exercises and mini-projects created while learning web development. Each folder contains a standalone static project (HTML, CSS, JS and assets). Open a project's folder and open its `index.html` in a browser, or serve the folder with a simple HTTP server during development.
+A collection of small front-end exercises and mini-projects created while learning web development. Each folder contains a standalone static project (HTML, CSS, JS and assets). Open a project's folder and open its `index.html` in a browser, or serve the folder with a simple HTTP server during development. You can also view a consolidated index of all projects by opening the `index.html` file in the root of this repository.
 ## Final Project: Quiz & Ladder Game
 
 This repository also links to my final project, **Quiz & Ladder**, a web-based game hosted in its own repository.
@@ -11,6 +11,8 @@ This repository also links to my final project, **Quiz & Ladder**, a web-based g
 ## Projects in this repository
 
 Below is a quick gallery of the projects in this repository. Click a card to open that project's folder in your browser.
+you can try out the projects of this repo in this github pages link
+https://rahul200618.github.io/Programming-the-web/
 
 | Project | Description |
 |---|---|
@@ -56,4 +58,3 @@ If you want, I can:
 - Add a top-level `LICENSE` (MIT) and a repository-level demo index page that links to every project with thumbnails.
 
 Tell me which of those you'd like and I'll implement it.
-
